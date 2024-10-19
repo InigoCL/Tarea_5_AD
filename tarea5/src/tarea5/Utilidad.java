@@ -9,12 +9,12 @@ public class Utilidad {
 		System.out.println("Dime la ruta del archivo a " + accion);
 		String ruta = sc.nextLine();
 		if (ruta.equalsIgnoreCase("")) {
-			 ruta = "src";
+			ruta = "src";
 		}
 		File archivo = new File(ruta);
 		return archivo;
 	}
-	
+
 	public static final int NUMERO_ALUMNOS = 5;
-	
+
 }

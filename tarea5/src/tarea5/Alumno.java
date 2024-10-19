@@ -1,6 +1,5 @@
 package tarea5;
 
-import java.io.File;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,17 +7,17 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Alumno implements Serializable{
+@SuppressWarnings("serial")
+public class Alumno implements Serializable {
 
-	private int dni; 
-	private String nombre; 
-	private String apellidos; 
+	private int dni;
+	private String nombre;
+	private String apellidos;
 	private String ciclo;
 	private String curso;
 	private String grupo;
-	private char genero; 
+	private char genero;
 	private Date fechaNacimiento;
-
 
 	public Alumno() {
 	}
@@ -97,8 +96,8 @@ public class Alumno implements Serializable{
 			System.out.println("Error: Debes ingresar un número entero para el NIA.");
 			sc.nextLine();
 		}
-		sc.nextLine(); 
-		
+		sc.nextLine();
+
 		System.out.println("Dime el nombre del alumno " + (i + 1));
 		setNombre(sc.nextLine());
 
@@ -137,4 +136,3 @@ public class Alumno implements Serializable{
 	}
 
 }
-

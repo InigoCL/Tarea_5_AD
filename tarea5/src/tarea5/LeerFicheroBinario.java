@@ -10,20 +10,26 @@ public class LeerFicheroBinario {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		ObjectInputStream ois = null;
-
 		try {
 			ois = new ObjectInputStream(new FileInputStream(Utilidad.pedirFichero("leer", sc)));
-			for(int i = 0;i<Utilidad.NUMERO_ALUMNOS;i++) {
+			for (int i = 0; i < Utilidad.NUMERO_ALUMNOS; i++) {
 				Alumno a = (Alumno) ois.readObject();
 				mostrarAlumno(a);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+		sc.close();
 
 	}
 
